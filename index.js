@@ -45,6 +45,9 @@ function saveUsers() {
   }
 }
 
+// Ensure favorites array exists for all users
+users.forEach(u => { if (!u.favorites) u.favorites = []; });
+
 // Authentication middleware
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
@@ -118,6 +121,35 @@ app.get('/api/profile', (req, res) => {
   } catch {
     res.status(401).json({ error: 'Invalid token' });
   }
+});
+
+// GET /api/favorites - get current user's favorite recipe IDs
+app.get('/api/favorites', authenticateToken, (req, res) => {
+  const user = users.find(u => u.email === req.user.email);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  res.json({ favorites: user.favorites });
+});
+
+// POST /api/favorites/:id - add a recipe ID to favorites
+app.post('/api/favorites/:id', authenticateToken, (req, res) => {
+  const user = users.find(u => u.email === req.user.email);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  const recipeId = req.params.id;
+  if (!user.favorites.includes(recipeId)) {
+    user.favorites.push(recipeId);
+    saveUsers();
+  }
+  res.json({ favorites: user.favorites });
+});
+
+// DELETE /api/favorites/:id - remove a recipe ID from favorites
+app.delete('/api/favorites/:id', authenticateToken, (req, res) => {
+  const user = users.find(u => u.email === req.user.email);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  const recipeId = req.params.id;
+  user.favorites = user.favorites.filter(id => id !== recipeId);
+  saveUsers();
+  res.json({ favorites: user.favorites });
 });
 
 app.get('/api/dashboard', authenticateToken, (req, res) => {

@@ -5,7 +5,15 @@
     "email": "admin@cookinghub.com",
     "password": "$2b$10$4KH//2FDLw6CK8xIKnTCy.w72aGBhecChk3u/ych48TxHgRSBHJxq",
     "role": "admin",
-    "createdAt": "2025-09-22T21:07:38.937Z"
+    "createdAt": "2025-09-22T21:07:38.937Z",
+    "favorites": [
+      "53086",
+      "53065",
+      "53060",
+      "52977",
+      "52978",
+      "53026"
+    ]
   },
   {
     "id": 2,
@@ -13,6 +21,12 @@
     "email": "test1@gmail.com",
     "password": "$2b$10$jk2jEwiV63wXQ9gTsg1m6OvXrngwg0fJFBPvFOcFD3shAD7wV4k7i",
     "role": "user",
-    "createdAt": "2025-09-22T21:16:51.291Z"
+    "createdAt": "2025-09-22T21:16:51.291Z",
+    "favorites": [
+      "52948",
+      "52971",
+      "52844",
+      "53065"
+    ]
   }
 ]
