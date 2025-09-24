@@ -182,4 +182,9 @@ app.get('/api/validate-token', authenticateToken, (req, res) => {
   res.json({ valid: true, user: req.user });
 });
 
-app.listen(3001, () => console.log('Backend running on http://localhost:3001'));
+const PORT = process.env.PORT || 3001;
+const HOST = process.env.HOST || '127.0.0.1';
+
+app.listen(PORT, HOST, () => {
+  console.log(`Backend running on http://${HOST}:${PORT}`);
+});
