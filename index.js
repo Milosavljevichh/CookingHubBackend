@@ -127,6 +127,7 @@ app.get('/api/profile', (req, res) => {
 app.get('/api/favorites', authenticateToken, (req, res) => {
   const user = users.find(u => u.email === req.user.email);
   if (!user) return res.status(404).json({ error: 'User not found' });
+  if (!user.favorites) user.favorites = [];
   res.json({ favorites: user.favorites });
 });
 

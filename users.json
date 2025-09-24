@@ -31,5 +31,31 @@
       "53085",
       "53086"
     ]
+  },
+  {
+    "id": 3,
+    "username": "ugabuga",
+    "email": "test2@gmail.com",
+    "password": "$2b$10$UABTUkDz6G1Bi7mTUHIIN.IrH/tosXtfuHw6imhh8okUBBrYsyG6G",
+    "role": "user",
+    "createdAt": "2025-09-24T11:10:34.031Z",
+    "favorites": []
+  },
+  {
+    "id": 4,
+    "username": "fergrs",
+    "email": "test3@gmail.com",
+    "password": "$2b$10$WlJkJa2XQKmMx9ikQhJfF.NfpX9AcWoGpnXPkCfP9rneOndNOrVsS",
+    "role": "user",
+    "createdAt": "2025-09-24T11:14:38.477Z",
+    "favorites": []
+  },
+  {
+    "id": 5,
+    "username": "fced",
+    "email": "test5@gmail.com",
+    "password": "$2b$10$d0u2f4xdafp63I8MkqOeCe8Qal40aC2zcYiD.HfyUSvvWHMtKXm8a",
+    "role": "user",
+    "createdAt": "2025-09-24T13:27:03.803Z"
   }
 ]
